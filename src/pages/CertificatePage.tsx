@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 
 import { candidates } from "../data/candidates"
 import CertificateCard from "../components/CertificateCard"
+import ShareButton from "../components/ShareButton"
 import { isCertificateClaimed } from "../utils/storage"
 
 const CertificatePage = () => {
@@ -75,6 +76,10 @@ const CertificatePage = () => {
                 </div>
 
                 <CertificateCard candidate={candidate} />
+
+                <div className="mt-6 flex justify-end">
+                    <ShareButton rollNo={candidate.rollNo} />
+                </div>
             </section>
         </main>
     )
