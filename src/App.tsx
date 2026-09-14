@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
 import ClaimPage from "./pages/ClaimPage"
 import CertificatePage from "./pages/CertificatePage"
@@ -8,13 +8,25 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/claim" replace />} />
+        <Route
+          path="/"
+          element={<Navigate to="/claim" replace />}
+        />
 
-        <Route path="/claim" element={<ClaimPage />} />
+        <Route
+          path="/claim"
+          element={<ClaimPage />}
+        />
 
-        <Route path="/certificate/:rollNo" element={<CertificatePage />} />
+        <Route
+          path="/certificate/:rollNo"
+          element={<CertificatePage />}
+        />
 
-        <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
       </Routes>
     </BrowserRouter>
   )
