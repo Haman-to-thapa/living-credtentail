@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom"
 
 import { candidates } from "../data/candidates"
 
+import SyllabusAccordion from "../components/SyllabusAccordion"
+
 const CertificatePage = () => {
     const { rollNo } = useParams<{ rollNo: string }>()
 
@@ -117,6 +119,8 @@ const CertificatePage = () => {
                                 </p>
                             </div>
                         </div>
+
+                        <SyllabusAccordion modules={candidate.syllabus} />
                     </div>
                 </article>
             </section>
