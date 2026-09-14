@@ -14,7 +14,7 @@ const ProgressTimeline = ({ progress }: ProgressTimelineProps) => {
                 const width = (item.value / maxValue) * 100
 
                 return (
-                    <div key={item.day} className="grid grid-cols-[48px_1fr_40px] items-center gap-3">
+                    <div key={item.day} className="grid min-w-0 grid-cols-[40px_minmax(0,1fr)_36px] items-center gap-2 sm:grid-cols-[48px_minmax(0,1fr)_40px] sm:gap-3">
                         <span className="text-sm font-medium text-slate-400">
                             {item.day}
                         </span>

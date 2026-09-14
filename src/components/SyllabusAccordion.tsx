@@ -38,6 +38,7 @@ const SyllabusAccordion = ({
                             className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/50"
                         >
                             <button
+                                id={`syllabus-button-${index}`}
                                 type="button"
                                 onClick={() => toggleModule(index)}
                                 aria-expanded={isOpen}
@@ -60,6 +61,8 @@ const SyllabusAccordion = ({
                             {isOpen && (
                                 <div
                                     id={`syllabus-panel-${index}`}
+                                    role="region"
+                                    aria-labelledby={`syllabus-button-${index}`}
                                     className="border-t border-slate-800 px-5 py-4"
                                 >
                                     <ul className="space-y-2">

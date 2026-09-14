@@ -97,7 +97,8 @@ const ClaimForm = () => {
                     placeholder="e.g. PRIP001"
                     disabled={status === "loading" || status === "success"}
                     aria-invalid={status === "error"}
-                    className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-white disabled:cursor-not-allowed disabled:opacity-60"
+                    aria-describedby="form-error"
+                    className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-white focus:ring-2 focus:ring-white/20 disabled:cursor-not-allowed disabled:opacity-60"
                 />
             </div>
 
@@ -125,12 +126,14 @@ const ClaimForm = () => {
                     minLength={20}
                     disabled={status === "loading" || status === "success"}
                     aria-invalid={status === "error"}
-                    className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-white disabled:cursor-not-allowed disabled:opacity-60"
+                    aria-describedby="form-error"
+                    className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-white focus:ring-2 focus:ring-white/20 disabled:cursor-not-allowed disabled:opacity-60"
                 />
             </div>
 
             {status === "error" && (
                 <p
+                    id="form-error"
                     role="alert"
                     className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300"
                 >

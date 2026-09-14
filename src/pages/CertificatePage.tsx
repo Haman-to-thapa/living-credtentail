@@ -64,7 +64,7 @@ const CertificatePage = () => {
 
     return (
         <main className="min-h-screen bg-slate-950 px-4 py-10 text-white sm:px-6 sm:py-16">
-            <section className="mx-auto max-w-5xl">
+            <section className="mx-auto w-full max-w-5xl">
                 <div className="mb-8 text-center">
                     <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
                         The Living Credential
