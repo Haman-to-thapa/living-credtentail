@@ -44,9 +44,9 @@ const CertificateCard = ({
                 <div
                     className={`
             relative grid w-full
-            transition-transform duration-700
+            transition-transform duration-1000 ease-in-out
             [transform-style:preserve-3d]
-            motion-reduce:transition-none
+            motion-reduce:transition-transform motion-reduce:duration-500
             ${isFlipped ? "[transform:rotateY(180deg)]" : ""}
           `}
                 >
