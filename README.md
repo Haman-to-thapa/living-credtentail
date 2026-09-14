@@ -1,32 +1,157 @@
-# React + TypeScript + Vite
+# The Living Credential
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A frontend-only learning credential built for the Pripton Innovations Software Developer Assignment.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The Living Credential is designed as more than a static certificate.
 
-## React Compiler
+The front side represents the candidate's achievement:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Exam result
+* Score and percentage
+* Pass/fail status
+* Syllabus covered
 
-## Expanding the Oxlint configuration
+The back side represents the candidate's ongoing learning journey:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+* Seven-day activity
+* Learning progress
+* Streak
+* Recently refreshed activity
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+The certificate can be claimed using a candidate roll number and then viewed publicly through a shareable certificate URL.
+
+## Concept
+
+I interpreted the "living credential" as a combination of a traditional certificate and a learning-progress profile.
+
+The flip interaction has a specific meaning:
+
+**Front = What you achieved**
+
+**Back = How you continue to grow**
+
+This allows the certificate to communicate both a verified outcome and the learning activity behind it.
+
+## Features
+
+* Roll number validation using mock candidate data
+* Feedback validation with a 20-character minimum
+* Claim state persistence using localStorage
+* Public certificate route
+* Invalid and unclaimed certificate states
+* Certificate front and back
+* Syllabus accordion
+* Seven-day learning progress visualization
+* Progress values that change slightly on reload
+* Smooth front/back flip interaction
+* Keyboard-friendly interaction
+* Reduced-motion support
+* Responsive layout for mobile and desktop
+* Verified credential indicator
+* Copy public certificate link
+
+## Tech Stack
+
+* React
+* TypeScript
+* Vite
+* React Router
+* Tailwind CSS
+* Browser localStorage
+
+## Running Locally
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown by Vite.
+
+## Demo Roll Number
+
+Use:
+
+```text
+PRIP001
+```
+
+For feedback, enter at least 20 characters.
+
+## Data Approach
+
+This project is intentionally frontend-only.
+
+Candidate information is stored in mock TypeScript data. Claim state is simulated with localStorage.
+
+Seven-day progress is also mocked. On page reload, the displayed activity values shift slightly to simulate the living nature of the credential.
+
+No backend or authentication layer was added because the assignment explicitly allows mocked frontend data.
+
+## Accessibility
+
+The interface was designed with:
+
+* Semantic form controls
+* Associated labels
+* Visible focus states
+* Keyboard-accessible buttons
+* Keyboard-accessible syllabus sections
+* Enter/Space interaction for the certificate flip
+* Reduced-motion support
+
+## Responsive Design
+
+The interface was designed to work at:
+
+* 375px mobile width
+* 1440px desktop width
+
+Special attention was given to certificate content, progress visualization, buttons, and long candidate names so that content remains readable without horizontal overflow.
+
+## Tradeoffs
+
+The project intentionally avoids unnecessary architectural complexity.
+
+There is no Redux store, backend, database, authentication, or API layer because those pieces were not needed for the frontend-focused assignment.
+
+The activity data is simulated rather than persisted so that a reload can demonstrate the changing nature of the credential.
+
+## What I Would Do With More Time
+
+With another day, I would explore:
+
+* Persistent activity history backed by a real API
+* Stronger social preview/Open Graph metadata
+* QR-based certificate verification
+* More detailed learning activity such as tasks completed and feedback trends
+* Automated tests for claim and public-certificate flows
+
+## Most Interesting Decision
+
+The most interesting decision was treating the flip as a product concept rather than only a visual animation.
+
+The front communicates the candidate's verified achievement, while the back communicates the continuing learning journey. This makes the interaction meaningful to the credential itself.
+
+## Hardest Part
+
+The hardest part was balancing the certificate's formal, trustworthy appearance with the more dynamic learning-progress experience on the back.
+
+The two sides needed to feel like the same credential while still having clearly different purposes.
+
+## What I Would Change With Another Day
+
+I would spend more time refining the visual system and adding richer learning signals to the back side while keeping the certificate restrained and easy to share.
+
+## License
+
+Built as part of the Pripton Innovations Software Developer Assignment.

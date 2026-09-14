@@ -144,9 +144,23 @@ const ClaimForm = () => {
             {status === "success" && (
                 <div
                     role="status"
-                    className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300"
+                    className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4"
                 >
-                    Credential claimed successfully. Redirecting...
+                    <div className="flex items-start gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
+                            ✓
+                        </span>
+
+                        <div>
+                            <p className="font-semibold text-emerald-200">
+                                Credential claimed successfully.
+                            </p>
+
+                            <p className="mt-1 text-sm text-emerald-300/70">
+                                Preparing your public certificate...
+                            </p>
+                        </div>
+                    </div>
                 </div>
             )}
 

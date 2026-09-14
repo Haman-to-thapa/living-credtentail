@@ -85,6 +85,13 @@ const CertificateFront = ({
             </div>
 
             <SyllabusAccordion modules={candidate.syllabus} />
+
+            <div className="mt-10 border-t border-slate-800 pt-5">
+                <p className="text-xs leading-5 text-slate-500">
+                    This credential reflects the candidate's verified examination result
+                    and ongoing learning activity.
+                </p>
+            </div>
         </div>
     )
 }

@@ -9,6 +9,7 @@ export const candidates: Candidate[] = [
         score: 92,
         percentage: 92,
         passed: true,
+        streak: 14,
 
         syllabus: [
             {
@@ -55,6 +56,7 @@ export const candidates: Candidate[] = [
         score: 87,
         percentage: 87,
         passed: true,
+        streak: 5,
 
         syllabus: [
             {

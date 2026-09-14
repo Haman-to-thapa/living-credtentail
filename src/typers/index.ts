@@ -16,6 +16,7 @@ export interface Candidate {
     score: number
     percentage: number
     passed: boolean
+    streak: number
     syllabus: SyllabusModule[]
     progress: ProgressDay[]
 }

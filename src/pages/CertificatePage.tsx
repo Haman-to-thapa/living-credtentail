@@ -66,13 +66,23 @@ const CertificatePage = () => {
         <main className="min-h-screen bg-slate-950 px-4 py-10 text-white sm:px-6 sm:py-16">
             <section className="mx-auto w-full max-w-5xl">
                 <div className="mb-8 text-center">
-                    <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
+                    <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
+                        <span>✓</span>
+                        Verified credential
+                    </div>
+
+                    <p className="mt-5 text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
                         The Living Credential
                     </p>
 
                     <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                        Verified Learning Certificate
+                        A record of what you achieved — and how you keep growing.
                     </h1>
+
+                    <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-400">
+                        This credential combines your verified exam result with your recent
+                        learning activity.
+                    </p>
                 </div>
 
                 <CertificateCard candidate={candidate} />

@@ -22,8 +22,8 @@ const CertificateCard = ({
             <div className="mb-4 flex items-center justify-between gap-4">
                 <p className="text-sm text-slate-400">
                     {isFlipped
-                        ? "Viewing your learning journey"
-                        : "Viewing your achievement"}
+                        ? "The journey behind this achievement"
+                        : "The achievement behind this credential"}
                 </p>
 
                 <button
