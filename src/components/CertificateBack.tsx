@@ -1,5 +1,7 @@
 import type { Candidate } from "../typers/index"
 import ProgressTimeline from "./ProgressTimeline"
+import { useMemo } from "react"
+import { generateDynamicProgress } from "../utils/progress"
 
 interface CertificateBackProps {
     candidate: Candidate
@@ -8,13 +10,18 @@ interface CertificateBackProps {
 const CertificateBack = ({
     candidate,
 }: CertificateBackProps) => {
-    const totalProgress = candidate.progress.reduce(
+    const dynamicProgress = useMemo(
+        () => generateDynamicProgress(candidate.progress),
+        [candidate.progress]
+    )
+
+    const totalProgress = dynamicProgress.reduce(
         (sum, item) => sum + item.value,
         0
     )
 
     const averageProgress = Math.round(
-        totalProgress / candidate.progress.length
+        totalProgress / dynamicProgress.length
     )
 
     return (
@@ -81,7 +88,7 @@ const CertificateBack = ({
                     </h3>
                 </div>
 
-                <ProgressTimeline progress={candidate.progress} />
+                <ProgressTimeline progress={dynamicProgress} />
             </div>
 
             <div className="mt-6 flex flex-col gap-2 border-t border-slate-800 pt-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
