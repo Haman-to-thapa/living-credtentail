@@ -4,6 +4,9 @@ import { candidates } from "../data/candidates"
 
 import SyllabusAccordion from "../components/SyllabusAccordion"
 
+import CertificateBack from "../components/CertificateBack"
+
+
 const CertificatePage = () => {
     const { rollNo } = useParams<{ rollNo: string }>()
 
@@ -121,6 +124,10 @@ const CertificatePage = () => {
                         </div>
 
                         <SyllabusAccordion modules={candidate.syllabus} />
+                    </div>
+
+                    <div className="border-t border-slate-800">
+                        <CertificateBack candidate={candidate} />
                     </div>
                 </article>
             </section>
