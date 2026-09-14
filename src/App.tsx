@@ -1,12 +1,22 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
+import ClaimPage from "./pages/ClaimPage"
+import CertificatePage from "./pages/CertificatePage"
+import NotFoundPage from "./pages/NotFoundPage"
 
-function App() {
-
-
+const App = () => {
   return (
-    <div className="">
-      <h1>Hello World</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/claim" replace />} />
+
+        <Route path="/claim" element={<ClaimPage />} />
+
+        <Route path="/certificate/:rollNo" element={<CertificatePage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
